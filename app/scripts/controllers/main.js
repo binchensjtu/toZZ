@@ -10,8 +10,7 @@
 var app = angular.module('toZzApp');
 app.controller('MainCtrl', ['$scope', '$window', 'Garden',
     function($scope, $window, Garden) {
-        var clientWidth = $(window).width();
-        var clientHeight = $(window).height();
+
         var loveHeart = document.getElementById('loveHeart');
         var gardenCanvas = document.getElementById('garden');
         gardenCanvas.width = loveHeart.clientHeight;
@@ -109,13 +108,6 @@ app.controller('MainCtrl', ['$scope', '$window', 'Garden',
 
 
         setAnimation();
-        $(window).resize(function() {
-            var newWidth = $(window).width();
-            var newHeight = $(window).height();
-            if (newWidth !== clientWidth && newHeight !== clientHeight) {
-                location.replace(location);
-            }
-        });
     }
 
 ]);
